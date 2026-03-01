@@ -7,8 +7,9 @@ import html from 'remark-html';
 import { ShieldCheck, ArrowLeft } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
-export async function generateMetadata({ params }: { params: { slug: string, locale: string } }) {
-    const filePath = path.join(process.cwd(), `app/[locale]/blog/${params.slug}.md`);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string, locale: string }> }) {
+    const { slug } = await params;
+    const filePath = path.join(process.cwd(), `app/[locale]/blog/${slug}.md`);
     if (!fs.existsSync(filePath)) return { title: 'Not Found' };
 
     const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -25,8 +26,9 @@ export async function generateMetadata({ params }: { params: { slug: string, loc
     };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string, locale: string } }) {
-    const filePath = path.join(process.cwd(), `app/[locale]/blog/${params.slug}.md`);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string, locale: string }> }) {
+    const { slug } = await params;
+    const filePath = path.join(process.cwd(), `app/[locale]/blog/${slug}.md`);
 
     if (!fs.existsSync(filePath)) {
         notFound();

@@ -53,7 +53,7 @@ export function Taskbar() {
     };
 
     return (
-        <div className="absolute bottom-0 left-0 w-full h-12 bg-black/80 backdrop-blur-md border-t border-[#00f0ff]/40 flex items-center justify-between px-4 z-50">
+        <div className="relative w-full h-12 shrink-0 bg-black/80 backdrop-blur-md border-t border-[#00f0ff]/40 flex items-center justify-between px-4 z-50">
 
             {/* Left: Mission Time */}
             <div className="flex items-center gap-4">

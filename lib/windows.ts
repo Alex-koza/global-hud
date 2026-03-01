@@ -14,9 +14,21 @@ export interface WindowState {
     zIndex: number;
 }
 
+export interface MapLayers {
+    conflicts: boolean;
+    crypto: boolean;
+    finance: boolean;
+    climate: boolean;
+    cyber: boolean;
+    migration: boolean;
+    energy: boolean;
+}
+
 interface WindowStore {
     windows: WindowState[];
     activeZIndex: number;
+    mapLayers: MapLayers;
+    selectedCountry: string | null;
     openWindow: (id: string, type: WindowType, title: string, position?: { x: number; y: number }) => void;
     closeWindow: (id: string) => void;
     minimizeWindow: (id: string) => void;
@@ -26,11 +38,23 @@ interface WindowStore {
     updateSize: (id: string, size: { width: number; height: number }) => void;
     focusWindow: (id: string) => void;
     minimizeAll: () => void;
+    toggleMapLayer: (layer: keyof MapLayers) => void;
+    setSelectedCountry: (country: string | null) => void;
 }
 
 export const useWindowStore = create<WindowStore>((set, get) => ({
     windows: [],
     activeZIndex: 100,
+    mapLayers: {
+        conflicts: true,
+        crypto: false,
+        finance: false,
+        climate: false,
+        cyber: false,
+        migration: false,
+        energy: false
+    },
+    selectedCountry: null,
     openWindow: (id, type, title, position = { x: 100, y: 100 }) => {
         set((state) => {
             const existing = state.windows.find((w) => w.id === id);
@@ -105,4 +129,10 @@ export const useWindowStore = create<WindowStore>((set, get) => ({
         set((state) => ({
             windows: state.windows.map((w) => ({ ...w, isMinimized: true, isFocused: false })),
         })),
+    toggleMapLayer: (layer) =>
+        set((state) => ({
+            mapLayers: { ...state.mapLayers, [layer]: !state.mapLayers[layer] }
+        })),
+    setSelectedCountry: (country) =>
+        set({ selectedCountry: country })
 }));

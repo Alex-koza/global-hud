@@ -9,6 +9,9 @@ import { CountryIntel } from '@/components/CountryIntel';
 import { SourceAnalysis } from '@/components/SourceAnalysis';
 import { VIPSignal } from '@/components/VIPSignal';
 import { AdBanner } from '@/components/AdBanner';
+import { RightSidebar } from '@/components/RightSidebar';
+import { LiveNewsFeed } from '@/components/LiveNewsFeed';
+import { MapControls } from '@/components/MapControls';
 import { useWindowStore } from '@/lib/windows';
 
 // Disable SSR for MapBackground since leaflet requires `window`
@@ -35,84 +38,117 @@ export default function DesktopOS() {
   }, [openWindow, t, windows.length]);
 
   return (
-    <main id="spy-os-desktop-main" className="w-screen h-screen relative bg-[#05080f] overflow-hidden select-none">
-      {/* Dynamic Background */}
-      <MapBackground />
+    <main id="spy-os-desktop-main" className="w-screen h-screen flex flex-col bg-[#05080f] overflow-hidden select-none border-[6px] border-[#00f0ff]/80 shadow-[0_0_50px_rgba(0,240,255,0.3)_inset] relative box-border">
 
-      <div className="absolute inset-0 pointer-events-none z-10 scanlines" />
-
-      {/* Welcome Glitch Text if no windows are open */}
-      {windows.length === 0 && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-20">
-          <h1 className="text-6xl font-bold tracking-widest uppercase glitch-text text-[#00f0ff] opacity-80" data-text={t('welcome')}>
-            {t('welcome')}
-          </h1>
-          <p className="mt-4 text-[#a855f7] tracking-[0.5em] animate-pulse text-sm">
-            SYSTEM STANDBY
-          </p>
+      {/* Top HUD Bar */}
+      <header className="h-10 border-b-2 border-[#00f0ff]/60 bg-[#00f0ff]/10 flex items-center px-4 shrink-0 relative z-30 shadow-[0_4px_20px_rgba(0,240,255,0.2)]">
+        <div className="absolute inset-0 scanlines opacity-50 pointer-events-none" />
+        <div className="text-[#00f0ff] font-bold tracking-[0.3em] text-[10px] md:text-xs flex items-center gap-4 relative z-10 uppercase">
+          <span className="animate-pulse text-[#ff0033]">●</span> SEARCHING COMPLETED...
         </div>
-      )}
+        <div className="ml-auto text-[#00f0ff]/70 font-mono text-[10px] uppercase tracking-widest relative z-10 hidden sm:block">
+          SYS.VER 9.2.1 // OMEGA CLEARANCE // LINK SECURE
+        </div>
+      </header>
 
-      {/* Render all active SpyWindows */}
-      {windows.map((w) => (
-        <SpyWindow key={w.id} id={w.id} title={w.title}>
-          {w.type === 'terminal' && (
-            <div className="text-[#00f0ff] font-mono text-xs leading-loose">
-              <p>{'> INITIALIZING SECURE SHELL...'}</p>
-              <p className="text-[#00f0ff]/50">{'> CONNECTION ESTABLISHED.'}</p>
-              <p className="text-[#00f0ff]/50">{'> WAITING FOR INPUT_'}</p>
-            </div>
-          )}
-          {w.type === 'radar' && (
-            <div className="flex items-center justify-center h-full">
-              <div className="w-32 h-32 rounded-full border-2 border-[#00f0ff]/30 flex items-center justify-center relative">
-                <div className="w-24 h-24 rounded-full border border-[#00f0ff]/20" />
-                <div className="w-16 h-16 rounded-full border border-[#00f0ff]/10" />
-                <div className="absolute inset-0 border-t-2 border-[#ff0033] rounded-full animate-spin [animation-duration:3s]" />
-              </div>
-            </div>
-          )}
-          {w.type === 'comms' && (
-            <div className="text-[#a855f7] font-mono text-sm leading-snug">
-              <p>ENCRYPTED CHANNEL 7A</p>
-              <div className="mt-4 h-1 w-full bg-[#a855f7]/20 relative overflow-hidden">
-                <div className="absolute inset-y-0 left-0 bg-[#a855f7] w-1/3 animate-[slide_2s_infinite]" />
-              </div>
-            </div>
-          )}
-          {w.type === 'database' && (
-            <div className="text-[#00f0ff] text-xs h-full flex flex-col">
-              <table className="w-full text-left">
-                <thead><tr className="border-b border-[#00f0ff]/30"><th className="pb-2">ID</th><th>TARGET</th><th>STATUS</th></tr></thead>
-                <tbody>
-                  <tr className="animate-pulse"><td>001</td><td>SIGMA-9</td><td className="text-[#ff0033]">COMPROMISED</td></tr>
-                  <tr><td>002</td><td>ECHO-BASE</td><td className="text-[#a855f7]">SECURE</td></tr>
-                  <tr><td>003</td><td>NODE-X</td><td className="text-[#00f0ff]">ONLINE</td></tr>
-                </tbody>
-              </table>
-              <div className="mt-auto">
-                <MiniChart />
-              </div>
-            </div>
-          )}
-          {w.type === 'intel' && (
-            <CountryIntel
-              windowId={w.id}
-              countryName={w.title.replace('CLASSIFIED: ', '').replace(' INTEL', '')}
-            />
-          )}
-          {w.type === 'source_analysis' && (
-            <SourceAnalysis
-              country={w.id.includes('-') ? w.id.split('-').slice(1).join(' ') : undefined}
-            />
-          )}
-          {w.type === 'vip_signal' && (
-            <VIPSignal />
-          )}
-        </SpyWindow>
-      ))}
+      {/* Main Content Area */}
+      <div className="flex flex-1 overflow-hidden relative z-20">
 
+        {/* Left Focus Area (Map + News) */}
+        <div className="flex-1 flex flex-col relative border-r-2 border-[#00f0ff]/40 shadow-[4px_0_20px_rgba(0,240,255,0.1)] bg-[#000000]">
+          <LiveNewsFeed />
+
+          <div className="flex-1 relative overflow-hidden bg-[#05080f]">
+            <MapControls />
+            <div className="absolute inset-0 pointer-events-none bg-[url('/grid.png')] opacity-10 mix-blend-overlay z-[1]" />
+            <MapBackground />
+          </div>
+        </div>
+
+        {/* Right Sidebar Area */}
+        <RightSidebar />
+
+      </div>
+
+      {/* Floating Windows Container (Rendered on top of the layout) */}
+      <div className="absolute inset-0 pointer-events-none z-[100]">
+        {/* Welcome Glitch Text if no windows are open */}
+        {windows.length === 0 && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-20">
+            <h1 className="text-6xl font-bold tracking-widest uppercase glitch-text text-[#00f0ff] opacity-80" data-text={t('welcome')}>
+              {t('welcome')}
+            </h1>
+            <p className="mt-4 text-[#a855f7] tracking-[0.5em] animate-pulse text-sm">
+              SYSTEM STANDBY
+            </p>
+          </div>
+        )}
+
+        {/* Render all active SpyWindows */}
+        {windows.map((w) => (
+          <div key={w.id} className="pointer-events-auto absolute inset-0">
+            <SpyWindow id={w.id} title={w.title}>
+              {w.type === 'terminal' && (
+                <div className="text-[#00f0ff] font-mono text-xs leading-loose">
+                  <p>{'> INITIALIZING SECURE SHELL...'}</p>
+                  <p className="text-[#00f0ff]/50">{'> CONNECTION ESTABLISHED.'}</p>
+                  <p className="text-[#00f0ff]/50">{'> WAITING FOR INPUT_'}</p>
+                </div>
+              )}
+              {w.type === 'radar' && (
+                <div className="flex items-center justify-center h-full">
+                  <div className="w-32 h-32 rounded-full border-2 border-[#00f0ff]/30 flex items-center justify-center relative">
+                    <div className="w-24 h-24 rounded-full border border-[#00f0ff]/20" />
+                    <div className="w-16 h-16 rounded-full border border-[#00f0ff]/10" />
+                    <div className="absolute inset-0 border-t-2 border-[#ff0033] rounded-full animate-spin [animation-duration:3s]" />
+                  </div>
+                </div>
+              )}
+              {w.type === 'comms' && (
+                <div className="text-[#a855f7] font-mono text-sm leading-snug">
+                  <p>ENCRYPTED CHANNEL 7A</p>
+                  <div className="mt-4 h-1 w-full bg-[#a855f7]/20 relative overflow-hidden">
+                    <div className="absolute inset-y-0 left-0 bg-[#a855f7] w-1/3 animate-[slide_2s_infinite]" />
+                  </div>
+                </div>
+              )}
+              {w.type === 'database' && (
+                <div className="text-[#00f0ff] text-xs h-full flex flex-col">
+                  <table className="w-full text-left">
+                    <thead><tr className="border-b border-[#00f0ff]/30"><th className="pb-2">ID</th><th>TARGET</th><th>STATUS</th></tr></thead>
+                    <tbody>
+                      <tr className="animate-pulse"><td>001</td><td>SIGMA-9</td><td className="text-[#ff0033]">COMPROMISED</td></tr>
+                      <tr><td>002</td><td>ECHO-BASE</td><td className="text-[#a855f7]">SECURE</td></tr>
+                      <tr><td>003</td><td>NODE-X</td><td className="text-[#00f0ff]">ONLINE</td></tr>
+                    </tbody>
+                  </table>
+                  <div className="mt-auto">
+                    <MiniChart />
+                  </div>
+                </div>
+              )}
+              {w.type === 'intel' && (
+                <CountryIntel
+                  windowId={w.id}
+                  countryName={w.title.replace('CLASSIFIED: ', '').replace(' INTEL', '')}
+                />
+              )}
+              {w.type === 'source_analysis' && (
+                <SourceAnalysis
+                  country={w.id.includes('-') ? w.id.split('-').slice(1).join(' ') : undefined}
+                />
+              )}
+              {w.type === 'vip_signal' && (
+                <VIPSignal />
+              )}
+            </SpyWindow>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom Structural Ad Banner */}
       <AdBanner />
+
       {/* Bottom Taskbar */}
       <Taskbar />
 

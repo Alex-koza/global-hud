@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAdminStore } from '@/lib/adminStore';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/routing';
 import { Lock, LogIn, AlertTriangle } from 'lucide-react';
 import { playSound } from '@/lib/sounds';
 

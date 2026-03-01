@@ -140,8 +140,8 @@ export function SpyWindow({ id, title, children, defaultPosition, defaultSize }:
                         </div>
 
                         {/* Window Content */}
-                        <div className="flex-1 overflow-auto relative p-4 bg-[#05080f]/50 custom-scrollbar">
-                            <div className="scanlines" />
+                        <div className="flex-1 overflow-auto relative p-4 bg-[#05080f]/50 custom-scrollbar font-mono text-[10px] sm:text-xs tracking-widest leading-relaxed text-[#00f0ff]">
+                            <div className="scanlines opacity-30" />
 
                             {/* Access Granted Overlay */}
                             <AnimatePresence>

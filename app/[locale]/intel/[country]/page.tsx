@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import { DesktopWrapper } from './DesktopWrapper';
 
-export async function generateMetadata({ params }: { params: { country: string, locale: string } }): Promise<Metadata> {
-    const countryFormatted = params.country.toUpperCase();
+export async function generateMetadata({ params }: { params: Promise<{ country: string, locale: string }> }): Promise<Metadata> {
+    const { country } = await params;
+    const countryFormatted = country.toUpperCase();
     return {
         title: `Intelligence Report: ${countryFormatted}`,
         description: `Real-time geopolitical and cybersecurity intelligence for ${countryFormatted}.`,
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: { country: string, 
     };
 }
 
-export default function CountryIntelPage({ params }: { params: { country: string, locale: string } }) {
+export default async function CountryIntelPage({ params }: { params: Promise<{ country: string, locale: string }> }) {
     // This page renders the exact same DesktopOS, but passing a prop or state 
     // so that the initial load spawns this specific country.
     // Since we rely on Zustand and `DesktopOS` is a client component, 
@@ -22,5 +23,6 @@ export default function CountryIntelPage({ params }: { params: { country: string
     // OR we can pass initial windows to DesktopOS.
     // For simplicity without massive refactoring, we'll wrap DesktopOS and use an effect.
 
-    return <DesktopWrapper country={params.country} />;
+    const { country } = await params;
+    return <DesktopWrapper country={country} />;
 }
