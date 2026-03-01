@@ -1,0 +1,35 @@
+{
+    "System": {
+        "title": "Global HUD",
+        "status": "ОНЛАЙН",
+        "location": "Глобально",
+        "connecting": "УСТАНОВКА БЕЗОПАСНОГО СОЕДИНЕНИЯ...",
+        "error": "КРИТИЧЕСКАЯ ОШИБКА: СВЯЗЬ ПОТЕРЯНА"
+    },
+    "Desktop": {
+        "welcome": "Добро пожаловать, Агент.",
+        "start": "ПУСК",
+        "global_overview": "ГЛОБАЛЬНЫЙ ОБЗОР",
+        "system_status": "СТАТУС СИСТЕМЫ",
+        "alert_log": "ЖУРНАЛ ТРЕВОГ"
+    },
+    "Windows": {
+        "map": "КАРТА ГЛОБАЛЬНОГО НАБЛЮДЕНИЯ",
+        "terminal": "СИСТЕМНЫЙ ТЕРМИНАЛ",
+        "radar": "РАДАР ЦЕЛЕЙ",
+        "comms": "ЗАЩИЩЕННАЯ СВЯЗЬ",
+        "database": "МОДУЛЬ БАЗЫ ДАННЫХ",
+        "intel": "ДАННЫЕ",
+        "source_analysis": "АНАЛИЗ ИСТОЧНИКОВ",
+        "vip_signal": "ВИП СИГНАЛ"
+    },
+    "Taskbar": {
+        "mission_time": "ВРЕМЯ МИССИИ",
+        "new_window": "НОВОЕ ОКНО",
+        "minimize_all": "СВЕРНУТЬ ВСЕ"
+    },
+    "Alerts": {
+        "access_granted": "ДОСТУП РАЗРЕШЕН",
+        "classified": "СЕКРЕТНО"
+    }
+}

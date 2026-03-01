@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+# Host
+Host: https://global-hud.vercel.app
+
+# Sitemaps
+Sitemap: https://global-hud.vercel.app/sitemap.xml

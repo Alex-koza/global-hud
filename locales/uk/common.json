@@ -1,0 +1,35 @@
+{
+    "System": {
+        "title": "Global HUD",
+        "status": "ОНЛАЙН",
+        "location": "Глобально",
+        "connecting": "ВСТАНОВЛЕННЯ БЕЗПЕЧНОГО ЗВ'ЯЗКУ...",
+        "error": "КРИТИЧНА ПОМИЛКА: ВТРАЧЕНО ЗВ'ЯЗОК"
+    },
+    "Desktop": {
+        "welcome": "Вітаємо, Агенте.",
+        "start": "ПУСК",
+        "global_overview": "ГЛОБАЛЬНИЙ ОГЛЯД",
+        "system_status": "СТАТУС СИСТЕМИ",
+        "alert_log": "ЖУРНАЛ ТРИВОГ"
+    },
+    "Windows": {
+        "map": "КАРТА ГЛОБАЛЬНОГО СПОСТЕРЕЖЕННЯ",
+        "terminal": "СИСТЕМНИЙ ТЕРМІНАЛ",
+        "radar": "РАДАР ЦІЛЕЙ",
+        "comms": "Захищений зв'язок",
+        "database": "МОДУЛЬ БАЗИ ДАНИХ",
+        "intel": "ДАНІ",
+        "source_analysis": "АНАЛІЗ ДЖЕРЕЛ",
+        "vip_signal": "ВІП СИГНАЛ"
+    },
+    "Taskbar": {
+        "mission_time": "ЧАС МІСІЇ",
+        "new_window": "НОВЕ ВІКНО",
+        "minimize_all": "ЗГОРНУТИ ВСІ"
+    },
+    "Alerts": {
+        "access_granted": "ДОСТУП ДОЗВОЛЕНО",
+        "classified": "ЦІЛКОМ ТАЄМНО"
+    }
+}

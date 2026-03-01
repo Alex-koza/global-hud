@@ -1,0 +1,35 @@
+{
+    "System": {
+        "title": "Global HUD",
+        "status": "ONLINE",
+        "location": "Global",
+        "connecting": "ESTABLISHING SECURE CONNECTION...",
+        "error": "CRITICAL ERROR: CONNECTION LOST"
+    },
+    "Desktop": {
+        "welcome": "Welcome, Agent.",
+        "start": "START",
+        "global_overview": "GLOBAL OVERVIEW",
+        "system_status": "SYSTEM STATUS",
+        "alert_log": "ALERT LOG"
+    },
+    "Windows": {
+        "map": "GLOBAL SURVEILLANCE MAP",
+        "terminal": "SYSTEM TERMINAL",
+        "radar": "TARGET RADAR",
+        "comms": "SECURE COMMS",
+        "database": "DATABASE MODULE",
+        "intel": "INTEL",
+        "source_analysis": "SOURCE ANALYSIS",
+        "vip_signal": "VIP SIGNAL"
+    },
+    "Taskbar": {
+        "mission_time": "MISSION TIME",
+        "new_window": "NEW WINDOW",
+        "minimize_all": "MINIMIZE ALL"
+    },
+    "Alerts": {
+        "access_granted": "ACCESS GRANTED",
+        "classified": "CLASSIFIED"
+    }
+}
