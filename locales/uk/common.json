@@ -11,7 +11,15 @@
         "start": "ПУСК",
         "global_overview": "ГЛОБАЛЬНИЙ ОГЛЯД",
         "system_status": "СТАТУС СИСТЕМИ",
-        "alert_log": "ЖУРНАЛ ТРИВОГ"
+        "alert_log": "ЖУРНАЛ ТРИВОГ",
+        "global_news": "ГЛОБАЛЬНІ НОВИНИ",
+        "live_feed": "ПРЯМИЙ ЕФІР",
+        "initializing_uplink": "ВСТАНОВЛЕННЯ ЗАХИЩЕНОГО ЗВ'ЯЗКУ...",
+        "no_signal": "СИГНАЛ ВІДСУТНІЙ",
+        "cyber_war_map": "КАРТА КІБЕРВІЙНИ",
+        "energy_supply": "ЕНЕРГЕТИКА ТА ПОСТАЧАННЯ",
+        "health_watch": "МОНІТОРИНГ ПАНДЕМІЙ",
+        "tactical_stream": "ТАКТИЧНИЙ ЕФІР"
     },
     "Windows": {
         "map": "КАРТА ГЛОБАЛЬНОГО СПОСТЕРЕЖЕННЯ",
@@ -21,7 +29,7 @@
         "database": "МОДУЛЬ БАЗИ ДАНИХ",
         "intel": "ДАНІ",
         "source_analysis": "АНАЛІЗ ДЖЕРЕЛ",
-        "vip_signal": "ВІП СИГНАЛ"
+        "vip_signal": "ВИП СИГНАЛ"
     },
     "Taskbar": {
         "mission_time": "ЧАС МІСІЇ",
@@ -31,5 +39,23 @@
     "Alerts": {
         "access_granted": "ДОСТУП ДОЗВОЛЕНО",
         "classified": "ЦІЛКОМ ТАЄМНО"
+    },
+    "Narrative": {
+        "title": "ЗАХИЩЕНО // ШІ-АУДИТ НАРРАТИВІВ",
+        "status": "OLLAMA 2.5: 14B-INSTRUCT-Q5 // АНАЛІЗ ЗАВЕРШЕНО",
+        "current_narrative": "Поточний наратив",
+        "primary_goal": "Основна мета",
+        "detected_methods": "Методи маніпуляції",
+        "distraction_target": "Ціль відволікання",
+        "key_sources": "Ключові джерела",
+        "confidence_level": "Рівень впевненості",
+        "alternative_narratives": "Альт. наративи",
+        "waiting": "ОЧІКУВАННЯ СИНХРОНІЗАЦІЇ ЗВІТУ ШІ...",
+        "footer": "Загін розподіленого наративного аналізу // ALPHA_BUILD",
+        "operations": "НАРАТИВНІ ОПЕРАЦІЇ",
+        "risk": "РИЗИК",
+        "high": "ВИСОКИЙ",
+        "medium": "СЕРЕДНІЙ",
+        "low": "НИЗЬКИЙ"
     }
 }

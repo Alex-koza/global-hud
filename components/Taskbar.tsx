@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
-import { Terminal, Map, Radio, Database, GlobeLock, Plus, Minimize2, FileText, Activity } from 'lucide-react';
+import { Terminal, Map, Radio, Database, GlobeLock, Plus, Minimize2, FileText, Activity, Globe } from 'lucide-react';
 import { useWindowStore, WindowState } from '@/lib/windows';
 import { motion } from 'framer-motion';
 import { playSound } from '@/lib/sounds';

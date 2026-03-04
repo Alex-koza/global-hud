@@ -11,7 +11,15 @@
         "start": "START",
         "global_overview": "GLOBAL OVERVIEW",
         "system_status": "SYSTEM STATUS",
-        "alert_log": "ALERT LOG"
+        "alert_log": "ALERT LOG",
+        "global_news": "GLOBAL NEWS",
+        "live_feed": "LIVE FEED",
+        "initializing_uplink": "ESTABLISHING SECURE UPLINK...",
+        "no_signal": "NO SIGNAL",
+        "cyber_war_map": "CYBER WAR MAP",
+        "energy_supply": "ENERGY & SUPPLY",
+        "health_watch": "PANDEMIC WATCH",
+        "tactical_stream": "TACTICAL STREAM"
     },
     "Windows": {
         "map": "GLOBAL SURVEILLANCE MAP",
@@ -31,5 +39,23 @@
     "Alerts": {
         "access_granted": "ACCESS GRANTED",
         "classified": "CLASSIFIED"
+    },
+    "Narrative": {
+        "title": "SECURE // AI NARRATIVE AUDIT",
+        "status": "OLLAMA 2.5: 14B-INSTRUCT-Q5 // ANALYSIS COMPLETE",
+        "current_narrative": "Current Narrative",
+        "primary_goal": "Primary Goal",
+        "detected_methods": "Manipulation Methods",
+        "distraction_target": "Distraction Target",
+        "key_sources": "Key Sources",
+        "confidence_level": "Confidence Level",
+        "alternative_narratives": "Alt. Narratives",
+        "waiting": "AWAITING AI REPORT SYNC...",
+        "footer": "DISTRIBUTED NARRATIVE ANALYSIS UNIT // ALPHA_BUILD",
+        "operations": "NARRATIVE OPERATIONS",
+        "risk": "RISK",
+        "high": "HIGH",
+        "medium": "MEDIUM",
+        "low": "LOW"
     }
 }

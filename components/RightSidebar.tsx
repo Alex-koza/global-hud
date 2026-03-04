@@ -1,4 +1,6 @@
 import { User, Activity, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { NewsPlayer } from './NewsPlayer';
+import { NarrativeBlock } from './NarrativeBlock';
 
 export function RightSidebar() {
     return (
@@ -20,6 +22,15 @@ export function RightSidebar() {
                         <ShieldCheck size={10} /> OMEGA CLEARANCE
                     </div>
                 </div>
+            </div>
+
+            {/* Narrative Operations Map Overlay - Relative position for mobile/tablet if needed, 
+                but here it will be absolute inside the sidebar or handled by the parent */}
+            <NarrativeBlock />
+
+            {/* Tactical Stream */}
+            <div className="h-64 flex-shrink-0">
+                <NewsPlayer />
             </div>
 
             {/* Globe View 01 */}

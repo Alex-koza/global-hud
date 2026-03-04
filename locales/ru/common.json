@@ -11,7 +11,15 @@
         "start": "ПУСК",
         "global_overview": "ГЛОБАЛЬНЫЙ ОБЗОР",
         "system_status": "СТАТУС СИСТЕМЫ",
-        "alert_log": "ЖУРНАЛ ТРЕВОГ"
+        "alert_log": "ЖУРНАЛ ТРЕВОГ",
+        "global_news": "ГЛОБАЛЬНЫЕ НОВОСТИ",
+        "live_feed": "ПРЯМОЙ ЭФИР",
+        "initializing_uplink": "УСТАНОВКА БЕЗОПАСНОГО СОЕДИНЕНИЯ...",
+        "no_signal": "СИГНАЛ ОТСУТСТВУЕТ",
+        "cyber_war_map": "КАРТА КИБЕРВОЙНЫ",
+        "energy_supply": "ЭНЕРГЕТИКА И СНАБЖЕНИЕ",
+        "health_watch": "МОНИТОРИНГ ПАНДЕМИЙ",
+        "tactical_stream": "ТАКТИЧЕСКИЙ ЭФИР"
     },
     "Windows": {
         "map": "КАРТА ГЛОБАЛЬНОГО НАБЛЮДЕНИЯ",
@@ -31,5 +39,23 @@
     "Alerts": {
         "access_granted": "ДОСТУП РАЗРЕШЕН",
         "classified": "СЕКРЕТНО"
+    },
+    "Narrative": {
+        "title": "ЗАЩИЩЕНО // ШИ-АУДИТ НАРРАТИВОВ",
+        "status": "OLLAMA 2.5: 14B-INSTRUCT-Q5 // АНАЛИЗ ЗАВЕРШЕН",
+        "current_narrative": "Текущий нарратив",
+        "primary_goal": "Основная цель",
+        "detected_methods": "Методы манипуляции",
+        "distraction_target": "Цель отвлечения",
+        "key_sources": "Ключевые источники",
+        "confidence_level": "Уровень уверенности",
+        "alternative_narratives": "Альт. нарративы",
+        "waiting": "ОЖИДАНИЕ СИНХРОНИЗАЦИИ ОТЧЕТА ШИ...",
+        "footer": "ОТРЯД РАСПРЕДЕЛЕННОГО НАРРАТИВНОГО АНАЛИЗА // ALPHA_BUILD",
+        "operations": "НАРРАТИВНЫЕ ОПЕРАЦИИ",
+        "risk": "РИСК",
+        "high": "ВЫСОКИЙ",
+        "medium": "СРЕДНИЙ",
+        "low": "НИЗКИЙ"
     }
 }
