@@ -58,7 +58,7 @@ export function NewsPlayer() {
 
             {/* Stream Selector */}
             <div className="flex border-t border-[#00f0ff]/20 p-1 gap-1 overflow-x-auto hide-scrollbar bg-black/60">
-                {settings.youtubeStreams.map((stream) => (
+                {settings.youtubeStreams.map((stream: any) => (
                     <button
                         key={stream.id}
                         onClick={() => setActiveStream(stream)}
