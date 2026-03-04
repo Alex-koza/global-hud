@@ -8,7 +8,16 @@ import { useAdminStore } from '@/lib/adminStore';
 export function NewsPlayer() {
     const t = useTranslations('Desktop');
     const { settings } = useAdminStore();
-    const [activeStream, setActiveStream] = useState(settings.youtubeStreams[0]);
+    const [activeStream, setActiveStream] = useState<any>(settings?.youtubeStreams?.[0] || { id: '', label: 'N/A', name: 'NO SIGNAL' });
+
+    if (!settings?.youtubeStreams?.length) {
+        return (
+            <div className="flex flex-col h-full bg-black/40 border border-[#ff0033]/20 items-center justify-center">
+                <Radio size={24} className="text-[#ff0033] animate-pulse mb-2" />
+                <span className="text-[10px] text-[#ff0033] uppercase tracking-widest">{t('no_signal')}</span>
+            </div>
+        );
+    }
 
     const getEmbedUrl = (id: string) => {
         // If it looks like a channel ID, we might need a different handling, 
